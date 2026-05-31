@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — The Pinnacle Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .admin-panel { max-width: 860px; margin: 40px auto; padding: 0 16px; }
+  .admin-panel h1 { margin-bottom: 10px; }
+  .admin-toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; align-items: center; }
+  .admin-toolbar select, .admin-toolbar button { padding: 10px 14px; border: 1px solid #dcdcdc; border-radius: 8px; background: #fff; font: inherit; }
+  .admin-toolbar button { cursor: pointer; }
+  #page-data { width: 100%; min-height: 420px; border: 1px solid #d9d9d9; border-radius: 14px; padding: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 14px; line-height: 1.6; resize: vertical; }
+  .admin-status { margin-top: 12px; font-size: 14px; }
+  .admin-status.success { color: #1f8e3f; }
+  .admin-status.error { color: #d40d12; }
+</style>
+</head>
+<body>
+<div class="utility-bar">
+  <div class="utility-right"><span>Saturday, May 30, 2026</span></div>
+</div>
+<header class="header">
+  <div class="logo-group">
+    <a class="logo-link" href="index.html">
+      <div class="logo-mark"><span>PR</span></div>
+      <div class="logo-text">
+        <span class="logo-the">The</span>
+        <span class="logo-name">Pinnacle Report<sup class="logo-tm">™</sup></span>
+        <span class="logo-tagline">Personal finance, made clear.</span>
+      </div>
+    </a>
+  </div>
+  <nav class="nav">
+    <a class="nav-link" href="articles.html">Articles</a>
+    <a class="nav-link" href="videos.html">Videos</a>
+    <a class="nav-link" href="resources.html">Resources</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <button class="btn-subscribe">Subscribe</button>
+  </nav>
+</header>
+
+<div class="admin-panel">
+  <h1>Content admin</h1>
+  <p>Edit page JSON and save live content for the local site.</p>
+  <div class="admin-toolbar">
+    <label for="page-selector">Page:</label>
+    <select id="page-selector"></select>
+    <button id="load-page">Load</button>
+    <button id="save-page">Save</button>
+  </div>
+  <textarea id="page-data" spellcheck="false"></textarea>
+  <div id="admin-status" class="admin-status"></div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "pinnacle-report",
+  "version": "1.0.0",
+  "description": "Static personal finance site with a small Node backend for content loading.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "index": {
+    "heroLabel": "The Lead · Investing",
+    "heroHeadline": "How a single dollar becomes a decade of freedom",
+    "heroDeck": "Compound interest rewards patience over prediction. We trace one ordinary dollar across thirty years — and explain why time in the market beats timing it.",
+    "heroButton": "Read the guide →",
+    "editorTitle": "Editor's Picks",
+    "editorLink": "All articles →",
+    "editorCards": [
+      {
+        "tag": "Saving",
+        "title": "The 50/30/20 rule — and when to break it",
+        "excerpt": "Budgeting frameworks are guides, not gospel. Here's how to adapt the classic rule to your actual life."
+      },
+      {
+        "tag": "Debt",
+        "title": "Avalanche vs. snowball — the smarter payoff method",
+        "excerpt": "Both work. One saves you more money. We break down the math and the psychology behind each approach."
+      },
+      {
+        "tag": "Retirement",
+        "title": "What your 401(k) statement is actually telling you",
+        "excerpt": "Most people glance and file. We show you the five numbers that actually matter — and what to do about them."
+      }
+    ]
+  },
+  "articles": {
+    "subtitle": "A clear perspective on personal finance.",
+    "featureCard": {
+      "feature": true,
+      "tag": "Investing",
+      "title": "How a single dollar becomes a decade of freedom",
+      "excerpt": "Compound interest rewards patience over prediction. We trace one ordinary dollar across thirty years — and explain why time in the market beats timing it.",
+      "linkText": "Read the guide →"
+    },
+    "sideCards": [
+      {
+        "side": true,
+        "tag": "Saving",
+        "title": "The 50/30/20 rule — and when to break it",
+        "excerpt": "Budgeting frameworks are guides, not gospel. Here's how to adapt the rule to your actual life."
+      },
+      {
+        "side": true,
+        "tag": "Debt",
+        "title": "Avalanche vs. snowball — the smarter payoff method",
+        "excerpt": "Both work. One saves you more money. We break down the math and the psychology."
+      },
+      {
+        "side": true,
+        "tag": "Credit",
+        "title": "What your credit score is actually measuring",
+        "excerpt": "Five factors, one number. Most people only know one of them. Here’s the full picture."
+      }
+    ],
+    "row2Cards": [
+      {
+        "tag": "Retirement",
+        "title": "What your 401(k) statement is actually telling you",
+        "excerpt": "Most people glance and file. We show you the five numbers that actually matter."
+      },
+      {
+        "tag": "Taxes",
+        "title": "The tax moves most people miss every single year",
+        "excerpt": "You don't need a CPA to keep more of what you earn. These are the deductions worth knowing."
+      },
+      {
+        "tag": "Real Estate",
+        "title": "Renting vs. buying — the honest math nobody shows you",
+        "excerpt": "The \"renting is throwing money away\" myth, examined. The real answer might surprise you."
+      }
+    ],
+    "tallCards": [
+      {
+        "tall": true,
+        "tag": "Investing",
+        "title": "Index funds explained — why simple usually wins"
+      },
+      {
+        "tall": true,
+        "tag": "Saving",
+        "title": "Building an emergency fund when money is tight"
+      }
+    ],
+    "secondaryFeature": {
+      "feature": true,
+      "tag": "Debt",
+      "title": "How to negotiate your way out of high-interest debt",
+      "excerpt": "Creditors negotiate more often than they’d like you to know. We walk through exactly what to say, when to call, and what to ask for — step by step.",
+      "linkText": "Read the guide →"
+    }
+  },
+  "videos": {
+    "subtitle": "Watch our short-form video guides on budgeting, investing, taxes, and personal finance strategy.",
+    "videoCards": [
+      {
+        "tag": "Saving",
+        "title": "Emergency funds 101",
+        "excerpt": "Learn how to build a financial safety net that actually covers your needs. 4 min"
+      },
+      {
+        "tag": "Investing",
+        "title": "Index funds vs. individual stocks",
+        "excerpt": "Why most investors should start with index funds, and when to think about picking stocks. 6 min"
+      },
+      {
+        "tag": "Retirement",
+        "title": "401(k) essentials for beginners",
+        "excerpt": "Your first guide to employer retirement plans, matching, and how to set it up right. 5 min"
+      }
+    ]
+  },
+  "resources": {
+    "subtitle": "Tools, templates, and guides to help you take control of your personal finances.",
+    "resourceCards": [
+      {
+        "tag": "Tools",
+        "title": "Budget calculator template",
+        "excerpt": "A spreadsheet to track income, expenses, and build your monthly budget baseline."
+      },
+      {
+        "tag": "Guides",
+        "title": "Tax deduction checklist",
+        "excerpt": "A comprehensive checklist of common deductions to review before filing."
+      },
+      {
+        "tag": "Tools",
+        "title": "Net worth calculator",
+        "excerpt": "Track your assets and liabilities, and monitor your progress over time."
+      }
+    ]
+  },
+  "about": {
+    "subtitle": "A newsletter for people who want practical, clear financial guidance without the noise.",
+    "introHeading": "Our mission",
+    "introText": "We help readers build confidence around money with practical, actionable insights on saving, investing, taxes, and planning for the future.",
+    "cards": [
+      {
+        "title": "Why we exist",
+        "details": "To translate financial complexity into clear ideas you can use today — whether you’re planning a budget, saving for a goal, or building long-term wealth."
+      },
+      {
+        "title": "How we work",
+        "details": "Each piece is grounded in real money decisions, not headlines. We focus on what matters, why it matters, and the next step that makes it easier to act."
+      },
+      {
+        "title": "Who it’s for",
+        "details": "For readers who want less noise and more confidence. If you want financial clarity without hype, this publication is built for you."
+      }
+    ]
+  },
+  "contact": {
+    "subtitle": "Have a question, feedback, or partnership idea? We'd love to hear from you.",
+    "introHeading": "Get in touch",
+    "introText": "Whether you have feedback, topic ideas, or partnership questions, we’re here to help. Reach us through email or social for a fast response.",
+    "cards": [
+      {
+        "title": "Editorial inquiries",
+        "details": "Send us story ideas, guest pitch questions, or questions about a published article.",
+        "contact": "hello@pinnaclereport.com"
+      },
+      {
+        "title": "Partnerships",
+        "details": "Interested in sponsorships, collaborations, or sponsored content? Let’s talk about how we can work together.",
+        "contact": "@PinnacleReport"
+      }
+    ]
+  }
+}
