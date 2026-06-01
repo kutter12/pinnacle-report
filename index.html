@@ -3,122 +3,416 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Pinnacle Report</title>
+<title>The Pinnacle Report — Coming Soon</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FFFFFF;
+    color: #0B0B0C;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: #0B0B0C;
+  }
+
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: #E7E7EA;
+  }
+
+  .inner {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 56px;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .logo-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #0B0B0C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark span {
+    color: #FFFFFF;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1;
+    gap: 5px;
+  }
+
+  .logo-the {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: #6C6C72;
+    text-transform: uppercase;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0B0B0C;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .logo-tm {
+    font-size: 10px;
+    vertical-align: super;
+    color: #6C6C72;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: #C9C9CE;
+    margin: 0 auto 40px;
+    animation: fadeUp 0.9s ease 0.15s both;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9A9AA1;
+    margin-bottom: 20px;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: #0B0B0C;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    animation: fadeUp 0.9s ease 0.25s both;
+  }
+
+  .headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: #3C3C41;
+  }
+
+  .subhead {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #6C6C72;
+    max-width: 420px;
+    margin: 0 auto 40px;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+
+  .form-wrap {
+    display: flex;
+    gap: 8px;
+    max-width: 420px;
+    margin: 0 auto 16px;
+    animation: fadeUp 0.9s ease 0.35s both;
+  }
+
+  .email-input {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #0B0B0C;
+    background: #FFFFFF;
+    border: 1px solid #C9C9CE;
+    border-radius: 2px;
+    padding: 12px 16px;
+    flex: 1;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .email-input::placeholder { color: #9A9AA1; }
+  .email-input:focus { border-color: #0B0B0C; }
+
+  .btn-notify {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    background: #0B0B0C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .btn-notify:hover { background: #3C3C41; }
+
+  .form-note {
+    font-size: 11px;
+    color: #9A9AA1;
+    letter-spacing: 0.02em;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+
+  .success-msg {
+    display: none;
+    font-size: 14px;
+    color: #3C3C41;
+    padding: 12px 20px;
+    border: 1px solid #E7E7EA;
+    border-radius: 2px;
+    background: #F4F4F2;
+    max-width: 420px;
+    margin: 0 auto 16px;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .countdown {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+    margin: 56px 0;
+    animation: fadeUp 0.9s ease 0.45s both;
+  }
+
+  .count-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .count-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #0B0B0C;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .count-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9A9AA1;
+  }
+
+  .count-sep {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #E7E7EA;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .footer-bar {
+    border-top: 1px solid #E7E7EA;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .footer-link {
+    font-size: 11px;
+    color: #9A9AA1;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: #0B0B0C; }
+
+  .footer-sep {
+    width: 1px;
+    height: 12px;
+    background: #E7E7EA;
+  }
+
+  @media (max-width: 480px) {
+    .headline { font-size: 30px; }
+    .logo-name { font-size: 22px; }
+    .logo-mark { width: 44px; height: 44px; }
+    .logo-mark span { font-size: 14px; }
+    .form-wrap { flex-direction: column; }
+    .btn-notify { width: 100%; padding: 14px; }
+    .count-num { font-size: 36px; }
+    .countdown { gap: 20px; }
+  }
+</style>
 </head>
-<body data-page="index">
+<body>
 
-<div class="utility-bar">
-  <div class="utility-right"><span>Saturday, May 30, 2026</span></div>
-</div>
+<main class="page">
+  <div class="inner">
 
-<header class="header">
-  <div class="logo-group">
-    <div class="logo-mark"><span>PR</span></div>
-    <div class="logo-text">
-      <span class="logo-the">The</span>
-      <span class="logo-name">Pinnacle Report<sup class="logo-tm">™</sup></span>
-      <span class="logo-tagline">Personal finance, made clear.</span>
-    </div>
-  </div>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-  <nav class="nav">
-      <a class="nav-link" href="articles.html">Articles</a>
-    <a class="nav-link" href="videos.html">Videos</a>
-    <a class="nav-link" href="resources.html">Resources</a>
-    <a class="nav-link" href="about.html">About</a>
-    <a class="nav-link" href="contact.html">Contact</a>
-    <button class="btn-subscribe">Subscribe</button>
-  </nav>
-</header>
-
-<div class="newsletter-banner" id="newsletter-banner">
-  <div class="newsletter-left">
-    <div class="newsletter-icon">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="M2 7l10 7 10-7"/>
-      </svg>
-    </div>
-    <div class="newsletter-copy">
-      <strong>Get smarter about money — free, every week.</strong>
-      <span>Join thousands of readers building better financial habits.</span>
-    </div>
-  </div>
-  <div class="newsletter-form">
-    <input class="newsletter-input" type="email" placeholder="Your email address" />
-    <button class="newsletter-btn">Join Free</button>
-  </div>
-  <span class="newsletter-dismiss" id="dismiss">×</span>
-</div>
-
-<div>
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-label" data-content="heroLabel">The Lead · Investing</div>
-      <h1 class="hero-headline" data-content="heroHeadline">How a single dollar<br>becomes <em>a decade of freedom</em></h1>
-      <p class="hero-deck" data-content="heroDeck">Compound interest rewards patience over prediction. We trace one ordinary dollar across thirty years — and explain why time in the market beats timing it.</p>
-      <a class="hero-read" href="#" data-content="heroButton">Read the guide <span>→</span></a>
-    </div>
-    <div class="hero-right">
-      <div class="hero-image-wrap">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3C3C41" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <path d="M21 15l-5-5L5 21"/>
-        </svg>
-        <span class="hero-image-placeholder">Drop a lead image</span>
+    <div class="logo-wrap">
+      <div class="logo-mark"><span>PR</span></div>
+      <div class="logo-text">
+        <span class="logo-the">The</span>
+        <span class="logo-name">Pinnacle Report<sup class="logo-tm">™</sup></span>
       </div>
-      <p class="hero-image-caption">Photograph — drag in your own, or leave as placeholder.</p>
     </div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-header">
-    <span class="section-title" data-content="editorTitle">Editor's Picks</span>
-    <a class="section-link" href="articles.html" data-content="editorLink">All articles →</a>
-  </div>
-  <div class="cards-grid" data-content="editorCards"></div>
-</div>
+    <div class="divider"></div>
 
-<div class="footer-newsletter">
-  <div class="footer-newsletter-eyebrow">Free Weekly Newsletter</div>
-  <div class="footer-newsletter-headline">Money clarity, <em>delivered to you.</em></div>
-  <p class="footer-newsletter-sub">No noise. No stock tips. Just clear, actionable financial thinking<br>from the Pinnacle editors — every week, free.</p>
-  <div class="footer-newsletter-form">
-    <input class="footer-newsletter-input" type="email" placeholder="Enter your email address" />
-    <button class="footer-newsletter-submit">Join Free →</button>
-  </div>
-  <p class="footer-newsletter-note">No spam, ever. Unsubscribe anytime.</p>
-</div>
+    <p class="eyebrow">Coming Soon</p>
 
-<div class="footer-strip">
-  <span class="footer-copy">© 2026 The Pinnacle Report™. All rights reserved.</span>
-  <div class="footer-links">
-    <a class="footer-link" href="#">Privacy</a>
-    <a class="footer-link" href="#">Terms</a>
-    <a class="footer-link" href="#">Advertise</a>
-    <a class="footer-link" href="contact.html">Contact</a>
+    <h1 class="headline">Something worth<br><em>waiting for.</em></h1>
+
+    <p class="subhead">
+      A new kind of personal finance resource — clear, honest, and built for the decisions that actually matter. No noise. No stock tips. Just a different perspective on personal finance.
+    </p>
+
+    <div class="form-wrap" id="form-wrap">
+      <input class="email-input" type="email" id="email-input" placeholder="Enter your email address" />
+      <button class="btn-notify" onclick="handleSubmit()">Notify Me</button>
+    </div>
+
+    <div class="success-msg" id="success-msg">
+      ✓ &nbsp; You're on the list. We'll let you know the moment we launch.
+    </div>
+
+    <p class="form-note">Be the first to know when we launch. No spam, ever.</p>
+
+    <div class="countdown">
+      <div class="count-item">
+        <span class="count-num" id="days">00</span>
+        <span class="count-label">Days</span>
+      </div>
+      <span class="count-sep">·</span>
+      <div class="count-item">
+        <span class="count-num" id="hours">00</span>
+        <span class="count-label">Hours</span>
+      </div>
+      <span class="count-sep">·</span>
+      <div class="count-item">
+        <span class="count-num" id="minutes">00</span>
+        <span class="count-label">Minutes</span>
+      </div>
+      <span class="count-sep">·</span>
+      <div class="count-item">
+        <span class="count-num" id="seconds">00</span>
+        <span class="count-label">Seconds</span>
+      </div>
+    </div>
+
   </div>
-</div>
+</main>
+
+<footer class="footer-bar">
+  <span class="footer-link">© 2026 The Pinnacle Report™</span>
+  <div class="footer-sep"></div>
+  <a class="footer-link" href="mailto:hello@pinnaclereport.com">Contact</a>
+  <div class="footer-sep"></div>
+  <a class="footer-link" href="#">Privacy</a>
+</footer>
 
 <script>
-  document.getElementById('dismiss').addEventListener('click', function() {
-    document.getElementById('newsletter-banner').classList.add('hidden');
+  const launchDate = new Date('2026-06-15T00:00:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = launchDate - now;
+    if (diff <= 0) {
+      document.getElementById('days').textContent = '00';
+      document.getElementById('hours').textContent = '00';
+      document.getElementById('minutes').textContent = '00';
+      document.getElementById('seconds').textContent = '00';
+      return;
+    }
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('days').textContent    = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent   = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  function handleSubmit() {
+    const input = document.getElementById('email-input');
+    const email = input.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      input.style.borderColor = '#C9C9CE';
+      input.focus();
+      input.style.borderColor = '#0B0B0C';
+      return;
+    }
+    document.getElementById('form-wrap').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  }
+
+  document.getElementById('email-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubmit();
   });
 </script>
-  <script src="js/page-content.js"></script>
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.querySelector('.nav');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    nav.classList.toggle('open');
-  });
-</script>
+
+</body>
+</html>
